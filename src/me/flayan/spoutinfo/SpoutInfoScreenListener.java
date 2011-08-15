@@ -12,7 +12,6 @@ public class SpoutInfoScreenListener extends ScreenListener{
 			if (button.getID() == 1) {
 				event.getPlayer().getMainScreen().closePopup();
 			}
-
 		}
 	}
 }

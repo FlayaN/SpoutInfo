@@ -13,9 +13,7 @@ import org.getspout.spoutapi.gui.*;
 public class SpoutInfo extends JavaPlugin{
 
 	private CommandListener cmdListener;
-	
 	public GenericPopup mainpopup;
-	//private SpoutInfo plugin;
 	public Configuration config;
 
 	public SpoutInfo(){
@@ -26,37 +24,36 @@ public class SpoutInfo extends JavaPlugin{
 		setupConfig();
 		getServer().getPluginManager().registerEvent(Type.CUSTOM_EVENT, new SpoutInfoInputListener(), Priority.Normal, this);
 		getServer().getPluginManager().registerEvent(Type.CUSTOM_EVENT, new SpoutInfoScreenListener(), Priority.Normal, this);
-        System.out.println(this + " is now enabled!");
-    }
+		System.out.println(this + " is now enabled!");
+	}
 
 	public void onDisable(){
 		System.out.println(this + " is now disabled!");
 	}
 
-	public boolean onCommand(CommandSender sender, Command cmd, String label, String args[])
-    {
-        return cmdListener.onCommand(sender, cmd, label, args);
+	public boolean onCommand(CommandSender sender, Command cmd, String label, String args[]){
+		return cmdListener.onCommand(sender, cmd, label, args);
     }
 
 	public void setupConfig(){
-	    config = this.getConfiguration();
-	    config.setHeader("#Config for SpoutInfo");
-	    config.getString("label.text", "This is a label");
-	    config.getString("label.color", "FFFFFF");
-	    config.getString("button.text", "This is a button");
-	    config.getString("button.color", "FFFFFF");
-	    config.getString("button.hovercolor", "FFFFFF");
-	    config.getInt("button.height", 10);
-	    config.getInt("button.width", 100);
-	    config.getInt("textfield.height", 10);
-	    config.getInt("textfield.width", 100);
-	    config.getInt("slider.height", 10);
-	    config.getInt("slider.width", 100);
-	    config.getString("texture.url", "http://dl.dropbox.com/u/7238554/generictexture.png");
-	    config.getInt("texture.height", 32);
-	    config.getInt("texture.width", 32);
-	    config.getInt("itemwidget.type", 14);
-	    config.getInt("itemwidget.size", 20);
-	    config.save();
+		config = this.getConfiguration();
+		config.setHeader("#Config for SpoutInfo");
+		config.getString("label.text", "This is a label");
+		config.getString("label.color", "FFFFFF");
+		config.getString("button.text", "This is a button");
+		config.getString("button.color", "FFFFFF");
+		config.getString("button.hovercolor", "FFFFFF");
+		config.getInt("button.height", 10);
+		config.getInt("button.width", 100);
+		config.getInt("textfield.height", 10);
+		config.getInt("textfield.width", 100);
+		config.getInt("slider.height", 10);
+		config.getInt("slider.width", 100);
+		config.getString("texture.url", "http://dl.dropbox.com/u/7238554/generictexture.png");
+		config.getInt("texture.height", 32);
+		config.getInt("texture.width", 32);
+		config.getInt("itemwidget.type", 14);
+		config.getInt("itemwidget.size", 20);
+		config.save();
 	}
 }
