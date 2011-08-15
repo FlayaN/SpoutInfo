@@ -1,0 +1,13 @@
+author: FlayaN
+database: false
+description: Show spout info
+generator: http://dinnerbone.com/minecraft/tools/pluginator/
+main: me.flayan.spoutinfo.SpoutInfo
+name: SpoutInfo
+startup: postworld
+version: '1.0'
+commands:
+  spoutinfo:
+    aliases:
+      - 'si'
+    usage: /<cmd>
