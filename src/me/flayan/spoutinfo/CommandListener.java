@@ -8,10 +8,12 @@ import org.getspout.spoutapi.player.SpoutPlayer;
 public class CommandListener
 {
 	private SpoutInfo plugin;
-	
+	private SpoutInfoGUI gui;
+
     public CommandListener(SpoutInfo spoutinfo)
     {
         plugin = spoutinfo;
+        gui = new SpoutInfoGUI(plugin);
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String args[])
@@ -30,7 +32,7 @@ public class CommandListener
         if(cmd.getName().equals("spoutinfo"))
         {
             player.closeActiveWindow();
-            plugin.openOverlay(player);
+            gui.openMainOverlay(player);
             return true;
         } else
         {
