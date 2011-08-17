@@ -33,7 +33,7 @@ public class SpoutInfo extends JavaPlugin{
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String args[]){
 		return cmdListener.onCommand(sender, cmd, label, args);
-    }
+	}
 
 	public void setupConfig(){
 		config = this.getConfiguration();

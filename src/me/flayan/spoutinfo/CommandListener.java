@@ -1,6 +1,8 @@
 package me.flayan.spoutinfo;
 
 import me.flayan.spoutinfo.SpoutInfo;
+
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.getspout.spoutapi.player.SpoutPlayer;
@@ -15,15 +17,11 @@ public class CommandListener {
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String args[]){
-    	if(!(sender instanceof SpoutPlayer)){
-    		sender.sendMessage("You need to be a player!");
-    		return true;
-    	}
     	SpoutPlayer player = (SpoutPlayer)sender;
-    	if(player.getVersion() < 18){
-    		player.sendMessage("You need to have the latest Spoutcraft v1.0.1 at least!");
-    		return true;
-    	}
+    	if ((player == sender) && (!sender.hasPermission("scrapbukkit.remove.self"))) {
+            sender.sendMessage(ChatColor.RED + "You do not have permission to show the gui");
+            return true;
+        }
     	if(cmd.getName().equals("spoutinfo")){
     		player.closeActiveWindow();
     		gui.openMainOverlay(player);

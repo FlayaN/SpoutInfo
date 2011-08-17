@@ -11,3 +11,7 @@ commands:
     aliases:
       - 'si'
     usage: /<cmd>
+permission:
+  spoutinfo.show:
+    description: Allows the player to see the gui
+    default: op
