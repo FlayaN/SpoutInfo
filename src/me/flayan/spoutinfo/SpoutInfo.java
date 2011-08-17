@@ -8,12 +8,10 @@ import org.bukkit.event.Event.Priority;
 import org.bukkit.event.Event.Type;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.util.config.Configuration;
-import org.getspout.spoutapi.gui.*;
 
 public class SpoutInfo extends JavaPlugin{
 
 	private CommandListener cmdListener;
-	public GenericPopup mainpopup;
 	public Configuration config;
 
 	public SpoutInfo(){
@@ -43,8 +41,8 @@ public class SpoutInfo extends JavaPlugin{
 		config.getString("button.text", "This is a button");
 		config.getString("button.color", "FFFFFF");
 		config.getString("button.hovercolor", "FFFFFF");
-		config.getInt("button.height", 10);
-		config.getInt("button.width", 100);
+		config.getInt("button.height", 20);
+		config.getInt("button.width", 200);
 		config.getInt("textfield.height", 10);
 		config.getInt("textfield.width", 100);
 		config.getInt("slider.height", 10);

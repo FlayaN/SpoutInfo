@@ -9,7 +9,7 @@ public class SpoutInfoGenericButton extends GenericButton implements SpoutInfoBu
 	
 	public SpoutInfoGenericButton(){
 		super();
-		this.setText("More info..").setHeight(6).setWidth(60);
+		this.setText("More info..").setHeight(10).setWidth(100);
 	}
 	
 	public Button setID(int id){

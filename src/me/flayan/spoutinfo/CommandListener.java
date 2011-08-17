@@ -17,8 +17,12 @@ public class CommandListener {
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String args[]){
+    	if(!(sender instanceof SpoutPlayer)){	 	
+    		sender.sendMessage("You need to be a player!");	 	
+    		return true;
+    	}
     	SpoutPlayer player = (SpoutPlayer)sender;
-    	if ((player == sender) && (!sender.hasPermission("scrapbukkit.remove.self"))) {
+    	if ((player == sender) && (!sender.hasPermission("spoutinfo.show"))) {
             sender.sendMessage(ChatColor.RED + "You do not have permission to show the gui");
             return true;
         }
